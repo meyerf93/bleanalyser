@@ -1,8 +1,8 @@
-# do ../scripts/sim.do all 1 0
+# do ../scripts/sim.do all 2 0
 # ../src_vhd
 # ../src_tb
 # QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 13:37:34 on May 24,2018
+# Start time: 13:56:58 on May 24,2018
 # vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -10,10 +10,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ble_packet_analyzer
 # -- Compiling architecture behave of ble_packet_analyzer
-# End time: 13:37:34 on May 24,2018, Elapsed time: 0:00:00
+# End time: 13:56:58 on May 24,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 13:37:34 on May 24,2018
+# Start time: 13:56:58 on May 24,2018
 # vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
 # -- Compiling package ble_packet_analyzer_tb_sv_unit
 # -- Compiling interface ble_itf
@@ -22,10 +22,10 @@
 # 
 # Top level modules:
 # 	packet_analyzer_tb
-# End time: 13:37:35 on May 24,2018, Elapsed time: 0:00:01
+# End time: 13:56:58 on May 24,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
-# Start time: 13:37:35 on May 24,2018
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=2 -GERRNO=0 
+# Start time: 13:56:58 on May 24,2018
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
@@ -59,7 +59,7 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /packet_analyzer_tb/dut
 # Sequencer : Start
-# Sequencer: First test case
+# Second test case
 # Sending packet with address 12345678
 # 
 # Advertising with address 2244a7cb
@@ -70,33 +70,38 @@
 # Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           1!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           2!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           3!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           4!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           5!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           6!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           7!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           8!!!!
-# Sequencer : end
-# Sequencer : end
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address a4222949
+# 
 # Driver : start
 # Monitor : start
 # Scoreboard : Start
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address a4222949
+# 
 # Driver: I've sent a packet
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
@@ -113,23 +118,46 @@
 # Scoreboard: ble packet: 137
 # Scoreboard: usb packet:   4
 # Scoreboard : Compare done!
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver: I've sent a packet
-# Driver : end
-# Break key hit
-# Simulation stop requested.
-# Control-C interrupt
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address a4222949
 # 
-# MACRO ./../scripts/sim.do PAUSED at line 73
-# Break key hit
-# Break key hit
-# Break key hit
-# End time: 13:39:29 on May 24,2018, Elapsed time: 0:01:54
-# Errors: 0, Warnings: 2
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: ble packet: 2244a7cb
+# Scoreboard: usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: ble packet: 0ea3
+# Scoreboard: usb packet: 000b
+# Scoreboard: Data error
+# Scoreboard: ble packet : 0f187b1557677b3a823576a09ded20ce24f28bdc088ea3ca47d13a03ae7f9e0fde83555c919794b7abeadc21e36c71d661f57109a111b85d31829d05834625d95
+# Scoreboard: usb packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a42229499e562bb2fe0e35
+# Scoreboard: Channel error
+# Scoreboard: ble packet: 12
+# Scoreboard: usb packet: 00
+# Scoreboard: Advertising error
+# Scoreboard: ble packet: 0
+# Scoreboard: usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: ble packet:  24
+# Scoreboard: usb packet:   4
+# Scoreboard: Size error
+# Scoreboard: ble packet: 23
+# Scoreboard: usb packet: 15
+# Scoreboard : Compare done!
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address a4222949
+# 
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet

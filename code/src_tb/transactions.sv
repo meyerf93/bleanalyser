@@ -116,6 +116,7 @@ class AnalyzerUsbPacket;
     logic[7:0] rssi = 0;
     logic[6:0] channel = 0;
     logic isAdv = 0;
+    logic[7:0] reserved = 0;
     logic[31:0] addr = 0;
     logic[15:0] header = 0;
     logic[(64*8):0] rawData = 0;

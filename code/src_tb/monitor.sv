@@ -31,6 +31,7 @@ class Monitor;
                 usb_packet.rssi = dutData[1];
                 usb_packet.channel = dutData[2][7:1];
                 usb_packet.isAdv = dutData[2][0];
+                usb_packet.reserved = dutData [3];
                 usb_packet.addr[7:0] = dutData[4];
                 usb_packet.addr[15:8] = dutData[5];
                 usb_packet.addr[23:16] = dutData[6];
