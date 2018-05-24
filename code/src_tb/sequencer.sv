@@ -10,7 +10,7 @@ class Sequencer;
 
     task test_case1();
         automatic BlePacket packet;
-        $display("First test case");
+        $display("Sequencer: First test case");
 
         packet = new;
         packet.isAdv = 1;
@@ -19,7 +19,7 @@ class Sequencer;
         sequencer_to_driver_fifo.put(packet);
         sequencer_to_scoreboard_fifo.put(packet);
 
-        $display("I sent an advertising packet!!!!");
+        $display("Sequencer: I sent an advertising packet!!!!");
 
 
         for(int i=0;i<9;i++) begin
@@ -31,7 +31,7 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("I sent a packet!!!!");
+            $display("Sequencer: I sent a packet num %d!!!!",i);
         end
         $display("Sequencer : end");
     endtask
@@ -61,15 +61,16 @@ class Sequencer;
                 sequencer_to_driver_fifo.put(packet);
                 sequencer_to_scoreboard_fifo.put(packet);
 
-                $display("Sequencer: I sent a packet!!!!");
+            $display("Sequencer: I sent a packet num %d!!!!",i);
             end
         end
+        $display("Sequencer: testcase 2 end");
     endtask
 
     task test_case3();
         automatic BlePacket packet;
 
-        $display("Third test case");
+        $display("Sequencer: Third test case");
 
         //Genere deux paquets advertising
         for(int i=0; i<2; i++) begin
@@ -80,7 +81,7 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent an advertising packet!!!!");
+            $display("Sequencer: I sent an advertising packet %d!!!!",i);
         end
 
         //Genere 18 paquets de donnees avec adresses correspondants
@@ -93,15 +94,15 @@ class Sequencer;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
-
-            $display("Sequencer: I sent a packet!!!!");
+            $display("Sequencer: I sent a packet %d!!!!",i);
         end
+        $display("Sequencer: testcase 3 end");
     endtask
 
     task test_case4();
         automatic BlePacket packet;
 
-        $display("Fourth test case");
+        $display("Sequencer: Fourth test case");
         //Genere deux paquets advertising
         for(int i=0; i<2; i++) begin
             packet = new;
@@ -111,7 +112,7 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent an advertising packet!!!!");
+            $display("Sequencer: I sent an advertising packet %d!!!!",i);
         end
 
         //Genere 18 paquets de donnees avec adresses correspondants
@@ -125,7 +126,7 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent a packet!!!!");
+            $display("Sequencer: I sent a packet %d!!!!",i);
         end
 
         //Genere deux paquets avec adresse bidon, devrait etre ignores
@@ -138,7 +139,10 @@ class Sequencer;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
+
+            $display("Sequencer: I sent an data packet %d!!!!",i);
         end
+        $display("Sequencer: testcase 4 end");
     endtask
 
     task test_case5();
@@ -158,6 +162,7 @@ class Sequencer;
             void'(packet.randomize());
 
             sequencer_to_driver_fifo.put(packet);
+            $display("Sequencer: I sent an data packet %d!!!!",i);
         end
 
         //Genere deux paquets advertising
@@ -169,7 +174,7 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent an advertising packet!!!!");
+            $display("Sequencer: I sent an advertising packet %d!!!!",i);
         end
 
         //Genere 18 paquets de donnees avec adresses correspondants
@@ -183,8 +188,9 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent a packet!!!!");
+            $display("Sequencer: I sent a packet %d!!!!",i);
         end
+        $display("Sequencer: testcase 5 end");
     endtask
 
     task test_case6();
@@ -211,8 +217,9 @@ class Sequencer;
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent a packet!!!!");
+            $display("Sequencer: I sent a packet %d!!!!",i);
         end
+        $display("Sequencer: testcase 6 end");
     endtask
 
 

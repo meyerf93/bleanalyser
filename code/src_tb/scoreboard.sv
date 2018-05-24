@@ -31,6 +31,8 @@ class Scoreboard;
             end
             if(ble_packet.header != usb_packet.header) begin
                 $display("Scoreboard: Header error");
+                $display("Scoreboard: ble packet: %h", ble_packet.header);
+                $display("Scoreboard: usb packet: %h", usb_packet.header);
                 nb_error++;
             end
             if(ble_packet.rawData != usb_packet.rawData) begin
@@ -41,10 +43,14 @@ class Scoreboard;
             end
             if(ble_packet.channel != usb_packet.channel) begin
                 $display("Scoreboard: Channel error");
+                $display("Scoreboard: ble packet: %h", ble_packet.channel);
+                $display("Scoreboard: usb packet: %h", usb_packet.channel);
                 nb_error++;
             end
             if(ble_packet.isAdv != usb_packet.isAdv) begin
                 $display("Scoreboard: Advertising error");
+                $display("Scoreboard: ble packet: %h", ble_packet.isAdv);
+                $display("Scoreboard: usb packet: %h", usb_packet.isAdv);
                 nb_error++;
             end
             if(ble_packet.rssi != usb_packet.rssi) begin
@@ -55,6 +61,8 @@ class Scoreboard;
             end
             if(ble_packet.size != (usb_packet.size-10)) begin
                 $display("Scoreboard: Size error");
+                $display("Scoreboard: ble packet: %h", ble_packet.size);
+                $display("Scoreboard: usb packet: %h", usb_packet.size);
                 nb_error++;
             end
 

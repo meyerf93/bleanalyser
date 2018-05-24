@@ -1,3 +1,32 @@
+# do ../scripts/sim.do all 1 0
+# ../src_vhd
+# ../src_tb
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:37:34 on May 24,2018
+# vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ble_packet_analyzer
+# -- Compiling architecture behave of ble_packet_analyzer
+# End time: 13:37:34 on May 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:37:34 on May 24,2018
+# vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
+# -- Compiling package ble_packet_analyzer_tb_sv_unit
+# -- Compiling interface ble_itf
+# -- Compiling interface usb_itf
+# -- Compiling module packet_analyzer_tb
+# 
+# Top level modules:
+# 	packet_analyzer_tb
+# End time: 13:37:35 on May 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
+# Start time: 13:37:35 on May 24,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
 # //
@@ -12,46 +41,17 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do ../scripts/sim.do
-# ../src_vhd
-# ../src_tb
-# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 10:21:19 on May 22,2018
-# vcom -reportprogress 300 -2008 ../src_vhd/ble_packet_analyzer.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ble_packet_analyzer
-# -- Compiling architecture behave of ble_packet_analyzer
-# End time: 10:21:19 on May 22,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 10:21:19 on May 22,2018
-# vlog -reportprogress 300 -sv ../src_tb/ble_packet_analyzer_tb.sv 
-# -- Compiling package ble_packet_analyzer_tb_sv_unit
-# -- Compiling interface ble_itf
-# -- Compiling interface usb_itf
-# -- Compiling module packet_analyzer_tb
-# 
-# Top level modules:
-# 	packet_analyzer_tb
-# End time: 10:21:19 on May 22,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=0 -GERRNO=0 
-# Start time: 10:21:20 on May 22,2018
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/code/sim/work.packet_analyzer_tb
-# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/code/sim/work.ble_packet_analyzer_tb_sv_unit
+# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.packet_analyzer_tb
+# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_packet_analyzer_tb_sv_unit
 # Loading sv_std.std
 # Loading work.ble_packet_analyzer_tb_sv_unit
 # Loading work.packet_analyzer_tb
-# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/code/sim/work.ble_itf
+# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_itf
 # Loading work.ble_itf
-# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/code/sim/work.usb_itf
+# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.usb_itf
 # Loading work.usb_itf
 # Loading std.standard
-# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/code/sim/work.ble_packet_analyzer(behave)
+# Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_packet_analyzer(behave)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
@@ -59,51 +59,77 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /packet_analyzer_tb/dut
 # Sequencer : Start
-# First test case
+# Sequencer: First test case
 # Sending packet with address 12345678
 # 
 # Advertising with address 2244a7cb
 # 
-# I sent an advertising packet!!!!
+# Sequencer: I sent an advertising packet!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           1!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           2!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           3!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           4!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           5!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           6!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           7!!!!
 # Sending packet with address 2244a7cb
 # 
-# I sent a packet!!!!
+# Sequencer: I sent a packet num           8!!!!
 # Sequencer : end
-# Second test case
-# Sending packet with address 12345678
-# 
-# Advertising with address a4222949
-# 
+# Sequencer : end
 # Driver : start
 # Monitor : start
 # Scoreboard : Start
-# Scoreboard : End
+# Driver: I've sent a packet
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Header error
+# Scoreboard: ble packet: d50b
+# Scoreboard: usb packet: 000b
+# Scoreboard: Data error
+# Scoreboard: ble packet : 0f904d8b0385a607efd692f6e783aa412b84f63f828c058b4841e97299741728f144ef9b3f4712d3cdb4f5e33504a7c359859f58d6a2244a7cb65942a3b25e826
+# Scoreboard: usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002244a7cb65942a3b25e826
+# Scoreboard: Channel error
+# Scoreboard: ble packet: 4e
+# Scoreboard: usb packet: 00
+# Scoreboard: Rssi error
+# Scoreboard: ble packet: 137
+# Scoreboard: usb packet:   4
+# Scoreboard : Compare done!
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
+# Driver: I've sent a packet
 # Driver : end
 # Break key hit
-# Break in Module packet_analyzer_tb at ../src_tb/ble_packet_analyzer_tb.sv line 31
-# End time: 10:21:58 on May 22,2018, Elapsed time: 0:00:38
+# Simulation stop requested.
+# Control-C interrupt
+# 
+# MACRO ./../scripts/sim.do PAUSED at line 73
+# Break key hit
+# Break key hit
+# Break key hit
+# End time: 13:39:29 on May 24,2018, Elapsed time: 0:01:54
 # Errors: 0, Warnings: 2
