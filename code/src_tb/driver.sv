@@ -16,8 +16,8 @@ class Driver;
         vif.valid_i <= 1;
         for(int i = packet.sizeToSend - 1;i>=0; i--) begin
             vif.serial_i <= packet.dataToSend[i];
-            vif.channel_i <= 0;
-            vif.rssi_i <= 4;
+            vif.channel_i <= packet.channel;
+            vif.rssi_i <= packet.rssi;
             @(posedge vif.clk_i);
         end
         vif.serial_i <= 0;
@@ -54,8 +54,8 @@ class Driver;
         @(posedge vif.clk_i);
         @(posedge vif.clk_i);
 
-        if (testcase == 1)
-            send_packets(10);
+        if (testcase == 0)
+            send_packets(22);
         if (testcase == 2)
             send_packets(20);
         if (testcase == 3)

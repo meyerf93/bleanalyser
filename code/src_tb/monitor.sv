@@ -22,6 +22,7 @@ class Monitor;
                     //Sauvegarde des donnes
                     dutData[currentData] <= vif.data_o;
                     currentData++;
+                    //$display("Moniteur : save data %d for packet %d", currentData, i);
                 end
                 frameOK = 1;
             end
@@ -69,8 +70,8 @@ class Monitor;
         AnalyzerUsbPacket usb_packet = new;
         $display("Monitor : start");
 
-        if (testcase == 1)
-            get_packets(10);
+        if (testcase == 0)
+            get_packets(22);
         if (testcase == 2)
             get_packets(20);
         if (testcase == 3)

@@ -5,10 +5,15 @@ class Sequencer;
 
     int testcase;
 
+    // Création des FIFOs entre le séquenceur et le Driver
+    // et entre le séquenceur et le scoreboard
     ble_fifo_t sequencer_to_driver_fifo;
     ble_fifo_t sequencer_to_scoreboard_fifo;
 
+//-----------------------------------------------------------------------//
+
     task test_case1();
+        // Création d'un paquet BLE
         automatic BlePacket packet;
         $display("Sequencer: First test case");
 
@@ -36,11 +41,15 @@ class Sequencer;
         $display("Sequencer : end");
     endtask
 
+//-----------------------------------------------------------------------//
+
     task test_case2();
         automatic BlePacket packet;
 
         $display("Second test case");
 
+        // Génération d'1 paquet d'advertising, puis 9 paquets de données,
+        // puis 1 paquet d'advertising, puis 9 paquets de données
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 1;
@@ -61,11 +70,13 @@ class Sequencer;
                 sequencer_to_driver_fifo.put(packet);
                 sequencer_to_scoreboard_fifo.put(packet);
 
-            $display("Sequencer: I sent a packet num %d!!!!",i);
+                $display("Sequencer: I sent a packet num %d!!!!",j+(10*i));
             end
         end
         $display("Sequencer: testcase 2 end");
     endtask
+
+//-----------------------------------------------------------------------//
 
     task test_case3();
         automatic BlePacket packet;
@@ -98,6 +109,8 @@ class Sequencer;
         end
         $display("Sequencer: testcase 3 end");
     endtask
+
+//-----------------------------------------------------------------------//
 
     task test_case4();
         automatic BlePacket packet;
@@ -144,6 +157,8 @@ class Sequencer;
         end
         $display("Sequencer: testcase 4 end");
     endtask
+
+//-----------------------------------------------------------------------//
 
     task test_case5();
         automatic BlePacket packet;
@@ -193,6 +208,8 @@ class Sequencer;
         $display("Sequencer: testcase 5 end");
     endtask
 
+//-----------------------------------------------------------------------//
+
     task test_case6();
         automatic BlePacket packet;
 
@@ -222,18 +239,19 @@ class Sequencer;
         $display("Sequencer: testcase 6 end");
     endtask
 
+//-----------------------------------------------------------------------//
 
     task run;
           $display("Sequencer : Start");
 
           case (testcase)
             0 : begin
-              test_case1();
-              test_case2();
-              test_case3();
-              test_case4();
+              //test_case1();
+              //test_case2();
+              //test_case3();
+              //test_case4();
               test_case5();
-              test_case6();
+              //test_case6();
             end
             1 : begin
               test_case1();

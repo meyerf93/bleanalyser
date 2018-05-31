@@ -12,7 +12,7 @@ class BlePacket;
   int sizeToSend;
   int sizeData;
 
-  /* pool of adress */
+  // mémoire pour les adresses
   static int nextAddr = 0;
   static logic[31:0] addrPool[16];
 
@@ -61,11 +61,18 @@ class BlePacket;
 
 	/* Initialisation des données à envoyer */
   	dataToSend = 0;
-  	sizeToSend=size*8+16+32+8;
+  	sizeToSend=size*8+16+32+8; // 64 car 2^6 (taille des données sur 6 bits)
     sizeData = sizeToSend;
 
     for(int i=0;i<6;i++)
       header[i] = size[i];
+
+    //XXX
+    /*while(int i=0 < 6)
+    {
+      header[i] = size[i]
+      i++;
+    }*/
 
 	/* Cas de l'envoi d'un paquet d'advertizing */
 	if (isAdv == 1) begin
@@ -73,16 +80,20 @@ class BlePacket;
         for(int i=0; i<32;i++) begin
             rawData[size*8-1-i] = addr[31-i];
         end;
-        //sauve l'addresse de la transaction dans le pull valide
-        addrPool[nextAddr%15] = addr;
+        // garde en mémoire l'adresse de la transaction
+        addrPool[nextAddr/*%15*/] = addr;
         nextAddr++;
 	end
 
 	/* Cas de l'envoi d'un paquet de données */
   else if (isAdv == 0) begin
-        // Reprend une adresse dans le pull
+        // sauve l'addresse de la transaction dans le pull valide
 		addr = addrPool[nextAddr-1];
   end
+
+  // Code rajouté pour simplifier la vie du scoreboard
+  for(int i=0; i<=(64*8)-(size*8); i++)
+      rawData[(64*8)-i] = 0;
 
 
 	/* Affectation des données à envoyer */
@@ -96,9 +107,9 @@ class BlePacket;
 		dataToSend[sizeToSend-8-32+i]=addr[i];
     $display("Sending packet with address %h\n",addr);
 	for(int i=0;i<16;i++)
-		dataToSend[sizeToSend-8-32-16+i]=0;
-	for(int i=0;i<6;i++)
-		dataToSend[sizeToSend-8-32-16+i]=size[i];
+		dataToSend[sizeToSend-8-32-16+i]=header[i];
+	//for(int i=0;i<6;i++)
+		//dataToSend[sizeToSend-8-32-16+i]=size[i];
 	for(int i=0;i<size*8;i++)
 		dataToSend[sizeToSend-8-32-16-1-i]=rawData[size*8-1-i];
     if (isAdv) begin
