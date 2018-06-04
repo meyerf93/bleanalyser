@@ -70,7 +70,7 @@ class Monitor;
         AnalyzerUsbPacket usb_packet = new;
         $display("Monitor : start");
 
-        if (testcase == 0)
+        if (testcase == 1)
             get_packets(22);
         if (testcase == 2)
             get_packets(20);

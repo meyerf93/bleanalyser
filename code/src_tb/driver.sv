@@ -33,6 +33,7 @@ class Driver;
 
         for(int i=0;i<nbPackets;i++) begin
             packet = new;
+            $display("taille fifo Sequencer = %d", sequencer_to_driver_fifo.num);
             sequencer_to_driver_fifo.get(packet);
             drive_packet(packet);
             $display("Driver: I've sent a packet");
@@ -43,7 +44,7 @@ class Driver;
         automatic BlePacket packet;
         packet = new;
         $display("Driver : start");
-
+    $display("taille fifo Sequencer = %d", sequencer_to_driver_fifo.num);
         vif.serial_i <= 0;
         vif.valid_i <= 0;
         vif.channel_i <= 0;
@@ -54,7 +55,7 @@ class Driver;
         @(posedge vif.clk_i);
         @(posedge vif.clk_i);
 
-        if (testcase == 0)
+        if (testcase == 1)
             send_packets(22);
         if (testcase == 2)
             send_packets(20);
