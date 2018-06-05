@@ -27,7 +27,7 @@ class Sequencer;
         $display("Sequencer: I sent an advertising packet!!!!");
 
 
-        for(int i=0;i<9;i++) begin
+        for(int i=0;i<21;i++) begin
 
             packet = new;
             packet.isAdv = 0;

@@ -61,6 +61,7 @@ class Monitor;
                 currentData = 0;
                 i++;
             end
+
             @(posedge vif.clk_i);
         end
     endtask
@@ -71,7 +72,7 @@ class Monitor;
         $display("Monitor : start");
 
         if (testcase == 1)
-            get_packets(10);
+            get_packets(22);
         if (testcase == 2)
             get_packets(10);
         if (testcase == 3)

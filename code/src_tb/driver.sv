@@ -98,7 +98,7 @@ class Driver;
             //$display("taille fifo Sequencer = %d", sequencer_to_driver_fifo.num);
             sequencer_to_driver_fifo.get(packet);
             drive_packet(packet);
-            $display("Driver: I've sent a packet");
+            $display("Driver: I've sent a packet %d",i);
         end
     endtask
 
@@ -118,7 +118,7 @@ class Driver;
         @(posedge vif.clk_i);
 
         if (testcase == 1)
-            send_packets(10);
+            send_packets(22);
         if (testcase == 2)
             send_packets(10);
         if (testcase == 3)
