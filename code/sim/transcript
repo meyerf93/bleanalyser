@@ -1,3 +1,32 @@
+# do ../scripts/sim.do all 1 0
+# ../src_vhd
+# ../src_tb
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 19:23:15 on Jun 05,2018
+# vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ble_packet_analyzer
+# -- Compiling architecture behave of ble_packet_analyzer
+# End time: 19:23:15 on Jun 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 19:23:15 on Jun 05,2018
+# vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
+# -- Compiling package ble_packet_analyzer_tb_sv_unit
+# -- Compiling interface ble_itf
+# -- Compiling interface usb_itf
+# -- Compiling module packet_analyzer_tb
+# 
+# Top level modules:
+# 	packet_analyzer_tb
+# End time: 19:23:16 on Jun 05,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
+# Start time: 19:23:16 on Jun 05,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
 # //
@@ -12,35 +41,6 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do ../scripts/sim.do all 1 0
-# ../src_vhd
-# ../src_tb
-# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 16:52:19 on Jun 05,2018
-# vcom -reportprogress 300 -2008 ../src_vhd/ble_packet_analyzer.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ble_packet_analyzer
-# -- Compiling architecture behave of ble_packet_analyzer
-# End time: 16:52:19 on Jun 05,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 16:52:19 on Jun 05,2018
-# vlog -reportprogress 300 -sv ../src_tb/ble_packet_analyzer_tb.sv 
-# -- Compiling package ble_packet_analyzer_tb_sv_unit
-# -- Compiling interface ble_itf
-# -- Compiling interface usb_itf
-# -- Compiling module packet_analyzer_tb
-# 
-# Top level modules:
-# 	packet_analyzer_tb
-# End time: 16:52:20 on Jun 05,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
-# Start time: 16:52:20 on Jun 05,2018
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.packet_analyzer_tb
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_packet_analyzer_tb_sv_unit
 # Loading sv_std.std
@@ -92,391 +92,140 @@
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           8!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num           9!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          10!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          11!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          12!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          13!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          14!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          15!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          16!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          17!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          18!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          19!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num          20!!!!
 # Sequencer : end
 # Sequencer : end
 # Driver : start
 # Monitor : start
 # Scoreboard : Start
+# Driver: I've sent a packet           0
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           0 packet
 # Scoreboard : Header OK for           0 packet
 # Scoreboard :Data OK for           0 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 4e
-# Scoreboard: Channel usb packet: 00
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           0 packet
 # Scoreboard :Rssi OK for           0 packet
 # Scoreboard :Size OK for           0 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           0
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           1
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           1 packet
 # Scoreboard : Header OK for           1 packet
 # Scoreboard :Data OK for           1 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 12
-# Scoreboard: Channel usb packet: 02
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           1 packet
 # Scoreboard :Rssi OK for           1 packet
 # Scoreboard :Size OK for           1 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           1
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           2
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           2 packet
 # Scoreboard : Header OK for           2 packet
 # Scoreboard :Data OK for           2 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 2a
-# Scoreboard: Channel usb packet: 04
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           2 packet
 # Scoreboard :Rssi OK for           2 packet
 # Scoreboard :Size OK for           2 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           2
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           3
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           3 packet
 # Scoreboard : Header OK for           3 packet
 # Scoreboard :Data OK for           3 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 12
-# Scoreboard: Channel usb packet: 06
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           3 packet
 # Scoreboard :Rssi OK for           3 packet
 # Scoreboard :Size OK for           3 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           3
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           4
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           4 packet
 # Scoreboard : Header OK for           4 packet
 # Scoreboard :Data OK for           4 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 46
-# Scoreboard: Channel usb packet: 08
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           4 packet
 # Scoreboard :Rssi OK for           4 packet
 # Scoreboard :Size OK for           4 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           4
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           5
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           5 packet
 # Scoreboard : Header OK for           5 packet
 # Scoreboard :Data OK for           5 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 10
-# Scoreboard: Channel usb packet: 0a
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           5 packet
 # Scoreboard :Rssi OK for           5 packet
 # Scoreboard :Size OK for           5 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           5
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           6
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           6 packet
 # Scoreboard : Header OK for           6 packet
 # Scoreboard :Data OK for           6 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 38
-# Scoreboard: Channel usb packet: 0c
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           6 packet
 # Scoreboard :Rssi OK for           6 packet
 # Scoreboard :Size OK for           6 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           6
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           7
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           7 packet
 # Scoreboard : Header OK for           7 packet
 # Scoreboard :Data OK for           7 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 06
-# Scoreboard: Channel usb packet: 0e
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           7 packet
 # Scoreboard :Rssi OK for           7 packet
 # Scoreboard :Size OK for           7 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           7
+# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           8
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           8 packet
 # Scoreboard : Header OK for           8 packet
 # Scoreboard :Data OK for           8 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 02
-# Scoreboard: Channel usb packet: 10
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           8 packet
 # Scoreboard :Rssi OK for           8 packet
 # Scoreboard :Size OK for           8 packet
 # Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           9
 # Monitor: I've got a packet from DUT
 # Scoreboard : I've got two packets, I'll compare them...
 # Scoreboard :Adress OK for           9 packet
 # Scoreboard : Header OK for           9 packet
 # Scoreboard :Data OK for           9 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 0e
-# Scoreboard: Channel usb packet: 12
+# Scoreboard :Channel OK
 # Scoreboard :Advertising OK for           9 packet
 # Scoreboard :Rssi OK for           9 packet
 # Scoreboard :Size OK for           9 packet
 # Scoreboard : Compare done!
-# Driver: I've sent a packet           9
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          10 packet
-# Scoreboard : Header OK for          10 packet
-# Scoreboard :Data OK for          10 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 36
-# Scoreboard: Channel usb packet: 14
-# Scoreboard :Advertising OK for          10 packet
-# Scoreboard :Rssi OK for          10 packet
-# Scoreboard :Size OK for          10 packet
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          10
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          11 packet
-# Scoreboard : Header OK for          11 packet
-# Scoreboard :Data OK for          11 packet
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 46
-# Scoreboard: Channel usb packet: 16
-# Scoreboard :Advertising OK for          11 packet
-# Scoreboard :Rssi OK for          11 packet
-# Scoreboard :Size OK for          11 packet
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          11
-# Driver: I've sent a packet          12
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          12 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: b46c
-# Scoreboard: Header usb packet: 1101
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 00000000000000000000000000000000000000000b6452c78e1c6feadeecbd67b54f984155f90226149351c7bcfe66ebb6db354673692df241de0fbb4fc8f250d
-# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c2
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 3c
-# Scoreboard: Channel usb packet: 1a
-# Scoreboard :Advertising OK for          12 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet:  80
-# Scoreboard: Rssi usb packet: 214
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 2c
-# Scoreboard: Size usb packet: 0b
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          13
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          13 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: 1101
-# Scoreboard: Header usb packet: d426
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c2
-# Scoreboard: Data usb packet : 00000000000000000000000000000000000000000000000000000b03ee3f019a12fcb7702bcce4a3784792682077323f8ae10146342c870c9c2075cee3e108c38
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 1a
-# Scoreboard: Channel usb packet: 1c
-# Scoreboard :Advertising OK for          13 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet: 214
-# Scoreboard: Rssi usb packet:  70
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 01
-# Scoreboard: Size usb packet: 30
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          14
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          14 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: d426
-# Scoreboard: Header usb packet: 14ce
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 00000000000000000000000000000000000000000000000000000b03ee3f019a12fcb7702bcce4a3784792682077323f8ae10146342c870c9c2075cee3e108c38
-# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008418f1c8ea7327cd989f09563c6c
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 32
-# Scoreboard: Channel usb packet: 1e
-# Scoreboard :Advertising OK for          14 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet:  70
-# Scoreboard: Rssi usb packet: 209
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 26
-# Scoreboard: Size usb packet: 18
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          15
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          15 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: 14ce
-# Scoreboard: Header usb packet: 0883
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008418f1c8ea7327cd989f09563c6c
-# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009e0272
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 42
-# Scoreboard: Channel usb packet: 20
-# Scoreboard :Advertising OK for          15 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet: 209
-# Scoreboard: Rssi usb packet: 170
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 0e
-# Scoreboard: Size usb packet: 0d
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          16
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          16 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: 0883
-# Scoreboard: Header usb packet: bad0
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009e0272
-# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fdcf808cb95ff44758093e3586a40fa8
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 02
-# Scoreboard: Channel usb packet: 22
-# Scoreboard :Advertising OK for          16 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet: 170
-# Scoreboard: Rssi usb packet:  43
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 03
-# Scoreboard: Size usb packet: 1a
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          17
-# Driver: I've sent a packet          18
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          17 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: bad0
-# Scoreboard: Header usb packet: f4fe
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fdcf808cb95ff44758093e3586a40fa8
-# Scoreboard: Data usb packet : 0000025c3aa604e80e2a3925b4bbee0329f20604a4dbb7e4f600d68cf3bb2af27c9db020cef3fad05ac9b295c64ea486fea0a96494a9afc4e3e60020a45350c73
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 0c
-# Scoreboard: Channel usb packet: 24
-# Scoreboard :Advertising OK for          17 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet:  43
-# Scoreboard: Rssi usb packet:  84
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 10
-# Scoreboard: Size usb packet: 48
-# Scoreboard : Compare done!
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          18 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: f4fe
-# Scoreboard: Header usb packet: b557
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 0000025c3aa604e80e2a3925b4bbee0329f20604a4dbb7e4f600d68cf3bb2af27c9db020cef3fad05ac9b295c64ea486fea0a96494a9afc4e3e60020a45350c73
-# Scoreboard: Data usb packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000cb842a64440e60a258a1cfa5d4507adc60f030aeba6948
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 0a
-# Scoreboard: Channel usb packet: 26
-# Scoreboard :Advertising OK for          18 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet:  84
-# Scoreboard: Rssi usb packet: 130
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 3e
-# Scoreboard: Size usb packet: 21
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          19
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          19 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: b557
-# Scoreboard: Header usb packet: 9008
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000cb842a64440e60a258a1cfa5d4507adc60f030aeba6948
-# Scoreboard: Data usb packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ee2c5892086ea6a9
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 3a
-# Scoreboard: Channel usb packet: 28
-# Scoreboard :Advertising OK for          19 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet: 130
-# Scoreboard: Rssi usb packet: 117
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 17
-# Scoreboard: Size usb packet: 12
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          20
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for          20 packet
-# Scoreboard: Header error
-# Scoreboard: Header ble packet: 9008
-# Scoreboard: Header usb packet: a802
-# Scoreboard: Data error
-# Scoreboard: Data ble packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ee2c5892086ea6a9
-# Scoreboard: Data usb packet : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bf92
-# Scoreboard: Channel error
-# Scoreboard: Channel ble packet: 04
-# Scoreboard: Channel usb packet: 2a
-# Scoreboard :Advertising OK for          20 packet
-# Scoreboard: Rssi error
-# Scoreboard: Rssi ble packet: 117
-# Scoreboard: Rssi usb packet: 123
-# Scoreboard: Size error
-# Scoreboard: Size ble packet: 08
-# Scoreboard: Size usb packet: 0c
-# Scoreboard : Compare done!
-# Driver: I've sent a packet          21
+# Scoreboard end with           0 error(s)
+# Monitor : end
 # Driver : end
+# Break key hit
+# Break at an unknown location
+# Stopped at ../src_tb/ble_packet_analyzer_tb.sv line 31
+# Control-C interrupt
+# 
+# MACRO ./../scripts/sim.do PAUSED at line 73
+# Break key hit
+# Break key hit
+# End time: 19:24:01 on Jun 05,2018, Elapsed time: 0:00:45
+# Errors: 0, Warnings: 2

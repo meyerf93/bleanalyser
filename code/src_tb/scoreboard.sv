@@ -89,10 +89,9 @@ class Scoreboard;
                 $display("Scoreboard :Size OK for %d packet", i);
 
             $display("Scoreboard : Compare done!");
+            $display("Scoreboard end with %d error(s)", nb_error);
+
         end
-
-        $display("Scoreboard end with %d error(s)", nb_error);
-
     endtask
 
     task scoreboardTask2;

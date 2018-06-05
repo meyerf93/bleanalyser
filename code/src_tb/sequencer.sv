@@ -10,6 +10,8 @@ class Sequencer;
     ble_fifo_t sequencer_to_driver_fifo;
     ble_fifo_t sequencer_to_scoreboard_fifo;
 
+    int channel;
+
 //-----------------------------------------------------------------------//
 
     task test_case1();
@@ -19,7 +21,10 @@ class Sequencer;
 
         packet = new;
         packet.isAdv = 1;
+        channel = 0;
         void'(packet.randomize());
+        packet.channel = channel;
+        packet.dataValid = 1;
 
         sequencer_to_driver_fifo.put(packet);
         sequencer_to_scoreboard_fifo.put(packet);
@@ -27,11 +32,13 @@ class Sequencer;
         $display("Sequencer: I sent an advertising packet!!!!");
 
 
-        for(int i=0;i<21;i++) begin
-
+        for(int i=0;i<9;i++) begin
+            channel = channel + 2;
             packet = new;
             packet.isAdv = 0;
             void'(packet.randomize());
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -53,7 +60,13 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 1;
+            if( i == 0 )
+              channel = 0;
+            else
+              channel = 24;
             void'(packet.randomize());
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -65,7 +78,13 @@ class Sequencer;
 
                 packet = new;
                 packet.isAdv = 0;
+                channel = channel + 2;
                 void'(packet.randomize());
+                packet.channel = channel;
+                if (j%2 == 0)
+                  packet.dataValid = 1;
+                else
+                  packet.dataValid = 0;
 
                 sequencer_to_driver_fifo.put(packet);
                 sequencer_to_scoreboard_fifo.put(packet);
@@ -87,7 +106,16 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 1;
+            if( i == 0 )
+              channel = 0;
+            else
+              channel = 24;
             void'(packet.randomize());
+            packet.channel = channel;
+            if (i%2 == 0)
+              packet.dataValid = 1;
+            else
+              packet.dataValid = 0;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -100,8 +128,12 @@ class Sequencer;
         for(int i=0;i<8;i++) begin
             packet = new;
             packet.isAdv = 0;
+            channel = channel + 2;
             void'(packet.randomize());
             packet.nextAddr = (i%2)+1;
+            packet.channel = channel;
+            packet.dataValid = 1;
+
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -120,7 +152,13 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 1;
+            if( i == 0 )
+              channel = 0;
+            else
+              channel = 24;
             void'(packet.randomize());
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -133,8 +171,14 @@ class Sequencer;
         for(int i=0;i<6;i++) begin
             packet = new;
             packet.isAdv = 0;
+            channel = channel + 2;
             void'(packet.randomize());
             packet.nextAddr = (i%2)+1;
+            packet.channel = channel;
+            if (i%3 == 0)
+              packet.dataValid = 1;
+            else
+              packet.dataValid = 0;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -147,8 +191,14 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 0;
+            if( i == 0 )
+              channel = 0;
+            else
+              channel = 24;
             void'(packet.randomize());
             packet.addr = packet.addr + 1 + i;
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -174,7 +224,11 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 0;
+            channel = 10;
+            channel = channel + 2;
             void'(packet.randomize());
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             $display("Sequencer: I sent an data packet %d!!!!",i);
@@ -184,7 +238,13 @@ class Sequencer;
         for(int i=0; i<2; i++) begin
             packet = new;
             packet.isAdv = 1;
+            if( i == 0 )
+              channel = 0;
+            else
+              channel = 24;
             void'(packet.randomize());
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -199,6 +259,8 @@ class Sequencer;
             packet.isAdv = 0;
             void'(packet.randomize());
             packet.nextAddr = (i%2)+1;
+            packet.channel = channel;
+            packet.dataValid = 1;
 
             sequencer_to_driver_fifo.put(packet);
             sequencer_to_scoreboard_fifo.put(packet);
@@ -206,37 +268,6 @@ class Sequencer;
             $display("Sequencer: I sent a packet %d!!!!",i);
         end
         $display("Sequencer: testcase 5 end");
-    endtask
-
-//-----------------------------------------------------------------------//
-
-    task test_case6();
-        automatic BlePacket packet;
-
-        $display("Sixth test case");
-
-        packet = new;
-        packet.isAdv = 1;
-        void'(packet.randomize());
-
-        sequencer_to_driver_fifo.put(packet);
-        sequencer_to_scoreboard_fifo.put(packet);
-
-        $display("Sequencer: I sent an advertising packet!!!!");
-
-
-        for(int i=0;i<9;i++) begin
-
-            packet = new;
-            packet.isAdv = 0;
-            void'(packet.randomize());
-
-            sequencer_to_driver_fifo.put(packet);
-            sequencer_to_scoreboard_fifo.put(packet);
-
-            $display("Sequencer: I sent a packet %d!!!!",i);
-        end
-        $display("Sequencer: testcase 6 end");
     endtask
 
 //-----------------------------------------------------------------------//
@@ -267,9 +298,6 @@ class Sequencer;
             end
             5 : begin
               test_case5();
-            end
-            6 : begin
-              test_case6();
             end
             default : begin
               test_case1();
