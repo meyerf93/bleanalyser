@@ -61,7 +61,7 @@ class Sequencer;
             $display("Sequencer: I sent an advertising packet!!!!");
 
 
-            for(int j=0;j<9;j++) begin
+            for(int j=0;j<4;j++) begin
 
                 packet = new;
                 packet.isAdv = 0;
@@ -97,7 +97,7 @@ class Sequencer;
 
         //Genere 18 paquets de donnees avec adresses correspondants
         //aux advertising. Change d'adresse une fois sur deux.
-        for(int i=0;i<18;i++) begin
+        for(int i=0;i<8;i++) begin
             packet = new;
             packet.isAdv = 0;
             void'(packet.randomize());
@@ -130,7 +130,7 @@ class Sequencer;
 
         //Genere 18 paquets de donnees avec adresses correspondants
         //aux advertising. Change d'adresse une fois sur deux.
-        for(int i=0;i<18;i++) begin
+        for(int i=0;i<6;i++) begin
             packet = new;
             packet.isAdv = 0;
             void'(packet.randomize());
@@ -194,7 +194,7 @@ class Sequencer;
 
         //Genere 18 paquets de donnees avec adresses correspondants
         //aux advertising. Change d'adresse une fois sur deux.
-        for(int i=0;i<18;i++) begin
+        for(int i=0;i<6;i++) begin
             packet = new;
             packet.isAdv = 0;
             void'(packet.randomize());

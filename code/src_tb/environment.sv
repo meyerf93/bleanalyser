@@ -19,9 +19,9 @@ class Environment;
     usb_fifo_t monitor_to_scoreboard_fifo;
 
     task build;
-    sequencer_to_driver_fifo     = new(22);
-    sequencer_to_scoreboard_fifo = new(22);
-    monitor_to_scoreboard_fifo   = new(100);
+    sequencer_to_driver_fifo     = new(200);
+    sequencer_to_scoreboard_fifo = new(200);
+    monitor_to_scoreboard_fifo   = new(200);
 
     sequencer = new;
     driver = new;

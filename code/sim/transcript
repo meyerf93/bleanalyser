@@ -1,3 +1,32 @@
+# do ../scripts/sim.do all 1 1
+# ../src_vhd
+# ../src_tb
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 16:39:34 on Jun 05,2018
+# vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ble_packet_analyzer
+# -- Compiling architecture behave of ble_packet_analyzer
+# End time: 16:39:34 on Jun 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 16:39:34 on Jun 05,2018
+# vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
+# -- Compiling package ble_packet_analyzer_tb_sv_unit
+# -- Compiling interface ble_itf
+# -- Compiling interface usb_itf
+# -- Compiling module packet_analyzer_tb
+# 
+# Top level modules:
+# 	packet_analyzer_tb
+# End time: 16:39:35 on Jun 05,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=1 
+# Start time: 16:39:35 on Jun 05,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
 # //
@@ -12,35 +41,6 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do ../scripts/sim.do all 1 1
-# ../src_vhd
-# ../src_tb
-# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:35:44 on Jun 04,2018
-# vcom -reportprogress 300 -2008 ../src_vhd/ble_packet_analyzer.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ble_packet_analyzer
-# -- Compiling architecture behave of ble_packet_analyzer
-# End time: 19:35:45 on Jun 04,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:35:45 on Jun 04,2018
-# vlog -reportprogress 300 -sv ../src_tb/ble_packet_analyzer_tb.sv 
-# -- Compiling package ble_packet_analyzer_tb_sv_unit
-# -- Compiling interface ble_itf
-# -- Compiling interface usb_itf
-# -- Compiling module packet_analyzer_tb
-# 
-# Top level modules:
-# 	packet_analyzer_tb
-# End time: 19:35:45 on Jun 04,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=1 
-# Start time: 19:35:45 on Jun 04,2018
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.packet_analyzer_tb
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_packet_analyzer_tb_sv_unit
 # Loading sv_std.std
@@ -95,33 +95,136 @@
 # Sequencer : end
 # Sequencer : end
 # Driver : start
-# taille fifo Sequencer =          10
 # Monitor : start
-# taille fifo BLE =          10, taille fifo USB =           0
 # Scoreboard : Start
-# taille fifo BLE =          10, taille fifo USB =           0
-# taille fifo Sequencer =          10
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 4e
+# Scoreboard: Channel usb packet: 00
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard :Rssi OK for           0 packet
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           9
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           1 packet
+# Scoreboard : Header OK for           1 packet
+# Scoreboard :Data OK for           1 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 12
+# Scoreboard: Channel usb packet: 02
+# Scoreboard :Advertising OK for           1 packet
+# Scoreboard :Rssi OK for           1 packet
+# Scoreboard :Size OK for           1 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           8
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           2 packet
+# Scoreboard : Header OK for           2 packet
+# Scoreboard :Data OK for           2 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 2a
+# Scoreboard: Channel usb packet: 04
+# Scoreboard :Advertising OK for           2 packet
+# Scoreboard :Rssi OK for           2 packet
+# Scoreboard :Size OK for           2 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           7
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           3 packet
+# Scoreboard : Header OK for           3 packet
+# Scoreboard :Data OK for           3 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 12
+# Scoreboard: Channel usb packet: 06
+# Scoreboard :Advertising OK for           3 packet
+# Scoreboard :Rssi OK for           3 packet
+# Scoreboard :Size OK for           3 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           6
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           4 packet
+# Scoreboard : Header OK for           4 packet
+# Scoreboard :Data OK for           4 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 46
+# Scoreboard: Channel usb packet: 08
+# Scoreboard :Advertising OK for           4 packet
+# Scoreboard :Rssi OK for           4 packet
+# Scoreboard :Size OK for           4 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           5 packet
+# Scoreboard : Header OK for           5 packet
+# Scoreboard :Data OK for           5 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 10
+# Scoreboard: Channel usb packet: 0a
+# Scoreboard :Advertising OK for           5 packet
+# Scoreboard :Rssi OK for           5 packet
+# Scoreboard :Size OK for           5 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           4
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           6 packet
+# Scoreboard : Header OK for           6 packet
+# Scoreboard :Data OK for           6 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 38
+# Scoreboard: Channel usb packet: 0c
+# Scoreboard :Advertising OK for           6 packet
+# Scoreboard :Rssi OK for           6 packet
+# Scoreboard :Size OK for           6 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           3
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           7 packet
+# Scoreboard : Header OK for           7 packet
+# Scoreboard :Data OK for           7 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 06
+# Scoreboard: Channel usb packet: 0e
+# Scoreboard :Advertising OK for           7 packet
+# Scoreboard :Rssi OK for           7 packet
+# Scoreboard :Size OK for           7 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           2
 # Driver: I've sent a packet
-# taille fifo Sequencer =           1
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           8 packet
+# Scoreboard : Header OK for           8 packet
+# Scoreboard :Data OK for           8 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 02
+# Scoreboard: Channel usb packet: 10
+# Scoreboard :Advertising OK for           8 packet
+# Scoreboard :Rssi OK for           8 packet
+# Scoreboard :Size OK for           8 packet
+# Scoreboard : Compare done!
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           9 packet
+# Scoreboard : Header OK for           9 packet
+# Scoreboard :Data OK for           9 packet
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 0e
+# Scoreboard: Channel usb packet: 12
+# Scoreboard :Advertising OK for           9 packet
+# Scoreboard :Rssi OK for           9 packet
+# Scoreboard :Size OK for           9 packet
+# Scoreboard : Compare done!
 # Driver: I've sent a packet
-# taille fifo Sequencer =           0
-# Break key hit
-# Break in Task ble_packet_analyzer_tb_sv_unit/Monitor::get_packets at ../src_tb/monitor.sv line 64
-# End time: 19:38:33 on Jun 04,2018, Elapsed time: 0:02:48
-# Errors: 0, Warnings: 2
+# Driver : end

@@ -71,15 +71,15 @@ class Monitor;
         $display("Monitor : start");
 
         if (testcase == 1)
-            get_packets(22);
+            get_packets(10);
         if (testcase == 2)
-            get_packets(20);
+            get_packets(10);
         if (testcase == 3)
-            get_packets(20);
+            get_packets(10);
         if (testcase == 4)
-            get_packets(22);
+            get_packets(10);
         if (testcase == 5)
-            get_packets(22);
+            get_packets(10);
         if (testcase == 6)
 
         $display("Monitor : end");

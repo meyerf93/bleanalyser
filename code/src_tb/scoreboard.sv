@@ -18,7 +18,7 @@ class Scoreboard;
 
         for(int i=0; i< nbPackets; i++) begin
 
-        $display("taille fifo BLE = %d, taille fifo USB = %d", sequencer_to_scoreboard_fifo.num, monitor_to_scoreboard_fifo.num);
+            //$display("taille fifo BLE = %d, taille fifo USB = %d", sequencer_to_scoreboard_fifo.num, monitor_to_scoreboard_fifo.num);
             sequencer_to_scoreboard_fifo.get(ble_packet);
             monitor_to_scoreboard_fifo.get(usb_packet);
 
@@ -102,7 +102,7 @@ class Scoreboard;
     task run;
         automatic BlePacket ble_packet = new;
         automatic AnalyzerUsbPacket usb_packet = new;
-$display("taille fifo BLE = %d, taille fifo USB = %d", sequencer_to_scoreboard_fifo.num, monitor_to_scoreboard_fifo.num);
+        //$display("taille fifo BLE = %d, taille fifo USB = %d", sequencer_to_scoreboard_fifo.num, monitor_to_scoreboard_fifo.num);
 
         $display("Scoreboard : Start");
 
