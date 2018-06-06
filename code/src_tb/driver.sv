@@ -40,6 +40,14 @@ class Driver;
             sequencer_to_driver_fifo.get(packet);
             drive_packet(packet);
             $display("Driver: I've sent a packet %d",i);
+
+            /*$display("Driver: packet address: %h", packet.addr);
+            $display("Driver: packet is advertising: %d", packet.isAdv);
+            $display("Driver: packet channel: %d", packet.channel);
+            $display("Driver: packet RSSI: %h", packet.rssi);
+            $display("Driver: packet header: %h", packet.header);
+            $display("Driver: packet size: %d", packet.size);
+            $display("Driver: packet data: %h", packet.rawData);*/
         end
     endtask
 

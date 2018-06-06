@@ -1,8 +1,8 @@
-# do ../scripts/sim.do all 1 0
+# do ../scripts/sim.do all 5 6
 # ../src_vhd
 # ../src_tb
 # QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:23:15 on Jun 05,2018
+# Start time: 00:28:30 on Jun 06,2018
 # vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -10,10 +10,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ble_packet_analyzer
 # -- Compiling architecture behave of ble_packet_analyzer
-# End time: 19:23:15 on Jun 05,2018, Elapsed time: 0:00:00
+# End time: 00:28:30 on Jun 06,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:23:15 on Jun 05,2018
+# Start time: 00:28:30 on Jun 06,2018
 # vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
 # -- Compiling package ble_packet_analyzer_tb_sv_unit
 # -- Compiling interface ble_itf
@@ -22,10 +22,10 @@
 # 
 # Top level modules:
 # 	packet_analyzer_tb
-# End time: 19:23:16 on Jun 05,2018, Elapsed time: 0:00:01
+# End time: 00:28:30 on Jun 06,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
-# Start time: 19:23:16 on Jun 05,2018
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=5 -GERRNO=6 
+# Start time: 00:28:30 on Jun 06,2018
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
@@ -59,173 +59,58 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /packet_analyzer_tb/dut
 # Sequencer : Start
-# Sequencer: First test case
+# Fifth test case
 # Sending packet with address 12345678
 # 
 # Advertising with address 2244a7cb
 # 
-# Sequencer: I sent an advertising packet!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           0!!!!
+# Sequencer: I sent an data packet           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           1!!!!
+# Sequencer: I sent an data packet           1!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address 5604e642
+# 
+# Sequencer: I sent an advertising packet           0!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address 6460123f
+# 
+# Sequencer: I sent an advertising packet           1!!!!
+# Sending packet with address 6460123f
+# 
+# Sequencer: I sent a packet           0!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           2!!!!
+# Sequencer: I sent a packet           1!!!!
+# Sending packet with address 5604e642
+# 
+# Sequencer: I sent a packet           2!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           3!!!!
+# Sequencer: I sent a packet           3!!!!
+# Sending packet with address 5604e642
+# 
+# Sequencer: I sent a packet           4!!!!
 # Sending packet with address 2244a7cb
 # 
-# Sequencer: I sent a packet num           4!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num           5!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num           6!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num           7!!!!
-# Sending packet with address 2244a7cb
-# 
-# Sequencer: I sent a packet num           8!!!!
-# Sequencer : end
+# Sequencer: I sent a packet           5!!!!
+# Sequencer: testcase 5 end
 # Sequencer : end
 # Driver : start
 # Monitor : start
 # Scoreboard : Start
 # Driver: I've sent a packet           0
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           0 packet
-# Scoreboard : Header OK for           0 packet
-# Scoreboard :Data OK for           0 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           0 packet
-# Scoreboard :Rssi OK for           0 packet
-# Scoreboard :Size OK for           0 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           1
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           1 packet
-# Scoreboard : Header OK for           1 packet
-# Scoreboard :Data OK for           1 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           1 packet
-# Scoreboard :Rssi OK for           1 packet
-# Scoreboard :Size OK for           1 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           2
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           2 packet
-# Scoreboard : Header OK for           2 packet
-# Scoreboard :Data OK for           2 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           2 packet
-# Scoreboard :Rssi OK for           2 packet
-# Scoreboard :Size OK for           2 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           3
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           3 packet
-# Scoreboard : Header OK for           3 packet
-# Scoreboard :Data OK for           3 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           3 packet
-# Scoreboard :Rssi OK for           3 packet
-# Scoreboard :Size OK for           3 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           4
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           4 packet
-# Scoreboard : Header OK for           4 packet
-# Scoreboard :Data OK for           4 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           4 packet
-# Scoreboard :Rssi OK for           4 packet
-# Scoreboard :Size OK for           4 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           5
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           5 packet
-# Scoreboard : Header OK for           5 packet
-# Scoreboard :Data OK for           5 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           5 packet
-# Scoreboard :Rssi OK for           5 packet
-# Scoreboard :Size OK for           5 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           6
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           6 packet
-# Scoreboard : Header OK for           6 packet
-# Scoreboard :Data OK for           6 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           6 packet
-# Scoreboard :Rssi OK for           6 packet
-# Scoreboard :Size OK for           6 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           7
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           7 packet
-# Scoreboard : Header OK for           7 packet
-# Scoreboard :Data OK for           7 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           7 packet
-# Scoreboard :Rssi OK for           7 packet
-# Scoreboard :Size OK for           7 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           8
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           8 packet
-# Scoreboard : Header OK for           8 packet
-# Scoreboard :Data OK for           8 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           8 packet
-# Scoreboard :Rssi OK for           8 packet
-# Scoreboard :Size OK for           8 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
 # Driver: I've sent a packet           9
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           9 packet
-# Scoreboard : Header OK for           9 packet
-# Scoreboard :Data OK for           9 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           9 packet
-# Scoreboard :Rssi OK for           9 packet
-# Scoreboard :Size OK for           9 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Monitor : end
 # Driver : end
-# Break key hit
-# Break at an unknown location
-# Stopped at ../src_tb/ble_packet_analyzer_tb.sv line 31
-# Control-C interrupt
-# 
-# MACRO ./../scripts/sim.do PAUSED at line 73
-# Break key hit
-# Break key hit
-# End time: 19:24:01 on Jun 05,2018, Elapsed time: 0:00:45
-# Errors: 0, Warnings: 2
