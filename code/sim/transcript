@@ -69,12 +69,11 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /packet_analyzer_tb/dut
 # Sequencer : Start
-# Sequencer: First test case
+# Fifth test case
 # Sending packet with address 12345678
 # 
 # Advertising with address 2244a7cb
 # 
-# Sequencer: I sent an advertising packet!!!!
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           0!!!!

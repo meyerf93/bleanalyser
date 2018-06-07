@@ -1,0 +1,887 @@
+//////// test case 2 ///////////
+//////// errno 0 ///////////////
+Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard :Rssi OK for           0 packet
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           1
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           1 packet
+# Scoreboard : Header OK for           1 packet
+# Scoreboard :Data OK for           1 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           1 packet
+# Scoreboard :Rssi OK for           1 packet
+# Scoreboard :Size OK for           1 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           2 packet
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 4de0
+# Scoreboard: Header usb packet: ad1e
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 04
+# Scoreboard: Channel usb packet: 06
+# Scoreboard :Advertising OK for           2 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 183
+# Scoreboard: Rssi usb packet: 238
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 20
+# Scoreboard: Size usb packet: 28
+# Scoreboard : Compare done!
+# Scoreboard end with           5 error(s)
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: ad1e
+# Scoreboard: Header usb packet: 510f
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 06
+# Scoreboard: Channel usb packet: 18
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 238
+# Scoreboard: Rssi usb packet: 245
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 1e
+# Scoreboard: Size usb packet: 19
+# Scoreboard : Compare done!
+# Scoreboard end with          12 error(s)
+# Driver: I've sent a packet           6
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 540e
+# Scoreboard: Header usb packet: e612
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017ce53d32ea658fcd425d8237a05
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbea6e0c6cb8ea0808e9d8823e0c7b9ef980
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 08
+# Scoreboard: Channel usb packet: 1a
+# Scoreboard :Advertising OK for           4 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 217
+# Scoreboard: Rssi usb packet: 101
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0e
+# Scoreboard: Size usb packet: 1c
+# Scoreboard : Compare done!
+# Scoreboard end with          18 error(s)
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 12345678
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 510f
+# Scoreboard: Header usb packet: 96fd
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Data usb packet : 0000000ea386bf170c257d1c9ae1ec1aba421d5d3c3e5d7c7751205afa05db96eb2db02d35bac16ef421055237cfd7944527b17dabc99f10ced1e0579c82338e7
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 18
+# Scoreboard: Channel usb packet: 1e
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 1
+# Scoreboard: Advertising usb packet: 0
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 245
+# Scoreboard: Rssi usb packet: 118
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0f
+# Scoreboard: Size usb packet: 47
+# Scoreboard : Compare done!
+# Scoreboard end with          25 error(s)
+# Driver: I've sent a packet           9
+# Driver : end
+////////// end errno 0 /////////////////
+////////// errno 1 /////////////////////
+Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Driver: I've sent a packet           1
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Driver: I've sent a packet           6
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Driver: I've sent a packet           9
+# Driver : end
+////////////// end errno 1 ////////////////
+////////////// errno 2 ////////////////////
+ Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 137
+# Scoreboard: Rssi usb packet: 138
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           1 error(s)
+# Driver: I've sent a packet           1
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           1 packet
+# Scoreboard : Header OK for           1 packet
+# Scoreboard :Data OK for           1 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           1 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet:  24
+# Scoreboard: Rssi usb packet:  25
+# Scoreboard :Size OK for           1 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           2 error(s)
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           2 packet
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 4de0
+# Scoreboard: Header usb packet: ad1e
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 04
+# Scoreboard: Channel usb packet: 06
+# Scoreboard :Advertising OK for           2 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 183
+# Scoreboard: Rssi usb packet: 239
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 20
+# Scoreboard: Size usb packet: 28
+# Scoreboard : Compare done!
+# Scoreboard end with           7 error(s)
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: ad1e
+# Scoreboard: Header usb packet: 510f
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 06
+# Scoreboard: Channel usb packet: 18
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 238
+# Scoreboard: Rssi usb packet: 246
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 1e
+# Scoreboard: Size usb packet: 19
+# Scoreboard : Compare done!
+# Scoreboard end with          14 error(s)
+# Driver: I've sent a packet           6
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 540e
+# Scoreboard: Header usb packet: e612
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017ce53d32ea658fcd425d8237a05
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbea6e0c6cb8ea0808e9d8823e0c7b9ef980
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 08
+# Scoreboard: Channel usb packet: 1a
+# Scoreboard :Advertising OK for           4 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 217
+# Scoreboard: Rssi usb packet: 102
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0e
+# Scoreboard: Size usb packet: 1c
+# Scoreboard : Compare done!
+# Scoreboard end with          20 error(s)
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 12345678
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 510f
+# Scoreboard: Header usb packet: 96fd
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Data usb packet : 0000000ea386bf170c257d1c9ae1ec1aba421d5d3c3e5d7c7751205afa05db96eb2db02d35bac16ef421055237cfd7944527b17dabc99f10ced1e0579c82338e7
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 18
+# Scoreboard: Channel usb packet: 1e
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 1
+# Scoreboard: Advertising usb packet: 0
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 245
+# Scoreboard: Rssi usb packet: 119
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0f
+# Scoreboard: Size usb packet: 47
+# Scoreboard : Compare done!
+# Scoreboard end with          27 error(s)
+# Driver: I've sent a packet           9
+# Driver : end
+//////// end errno 2 ///////////////////////////
+//////// errno 3 ///////////////////////////////
+Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard :Rssi OK for           0 packet
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           1
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           1 packet
+# Scoreboard : Header OK for           1 packet
+# Scoreboard :Data OK for           1 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           1 packet
+# Scoreboard :Rssi OK for           1 packet
+# Scoreboard :Size OK for           1 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           2 packet
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 4de0
+# Scoreboard: Header usb packet: ad1e
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 04
+# Scoreboard: Channel usb packet: 06
+# Scoreboard :Advertising OK for           2 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 183
+# Scoreboard: Rssi usb packet: 238
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 20
+# Scoreboard: Size usb packet: 28
+# Scoreboard : Compare done!
+# Scoreboard end with           5 error(s)
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: ad1e
+# Scoreboard: Header usb packet: 510f
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 06
+# Scoreboard: Channel usb packet: 18
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 238
+# Scoreboard: Rssi usb packet: 245
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 1e
+# Scoreboard: Size usb packet: 19
+# Scoreboard : Compare done!
+# Scoreboard end with          12 error(s)
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: f3095df5
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 540e
+# Scoreboard: Header usb packet: 3706
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017ce53d32ea658fcd425d8237a05
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000365c75040474
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 08
+# Scoreboard: Channel usb packet: 1a
+# Scoreboard :Advertising OK for           4 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 217
+# Scoreboard: Rssi usb packet: 101
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0e
+# Scoreboard: Size usb packet: 10
+# Scoreboard : Compare done!
+# Scoreboard end with          18 error(s)
+# Driver: I've sent a packet           6
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 12345678
+# Scoreboard: Adresse usb packet: cb7ef51c
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 510f
+# Scoreboard: Header usb packet: 35f8
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Data usb packet : 00000000000000000b8612be8e4d70f60d5d210eae9e1f2ebe3ba8902d7d02edcb7596d8169add60b77a1082a91be7ebca2293d8bed5e4cf886768f02bce4119c
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 18
+# Scoreboard: Channel usb packet: 1e
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 1
+# Scoreboard: Advertising usb packet: 0
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 245
+# Scoreboard: Rssi usb packet: 118
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0f
+# Scoreboard: Size usb packet: 42
+# Scoreboard : Compare done!
+# Scoreboard end with          25 error(s)
+# Driver: I've sent a packet           9
+# Driver : end
+/////////// end errno 3 ////////////////////////
+/////////// errno 4 ////////////////////////////
+Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard :Rssi OK for           0 packet
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           1
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 0ea3
+# Scoreboard: Header usb packet: 510f
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 00000000000000000000000000000000000000000000000000000000000f9e0fde83555c919794b7abeadc21e36c71d661f57109a111b85d31829d05834625d95
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 02
+# Scoreboard: Channel usb packet: 18
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet:  24
+# Scoreboard: Rssi usb packet: 245
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 23
+# Scoreboard: Size usb packet: 19
+# Scoreboard : Compare done!
+# Scoreboard end with           7 error(s)
+# Driver: I've sent a packet           6
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Driver: I've sent a packet           9
+# Driver : end
+///////// end errno 4 //////////////////
+///////// errno 5 //////////////////////
+ Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           0 packet
+# Scoreboard : Header OK for           0 packet
+# Scoreboard :Data OK for           0 packet
+# Scoreboard :Channel OK
+# Scoreboard :Advertising OK for           0 packet
+# Scoreboard :Rssi OK for           0 packet
+# Scoreboard :Size OK for           0 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           0 error(s)
+# Driver: I've sent a packet           1
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           1 packet
+# Scoreboard : Header OK for           1 packet
+# Scoreboard :Data OK for           1 packet
+# Scoreboard :Channel OK
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard :Rssi OK for           1 packet
+# Scoreboard :Size OK for           1 packet
+# Scoreboard : Compare done!
+# Scoreboard end with           1 error(s)
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard :Adress OK for           2 packet
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 4de0
+# Scoreboard: Header usb packet: ad1e
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# Scoreboard: Data usb packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 04
+# Scoreboard: Channel usb packet: 06
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 183
+# Scoreboard: Rssi usb packet: 238
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 20
+# Scoreboard: Size usb packet: 28
+# Scoreboard : Compare done!
+# Scoreboard end with           7 error(s)
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: 12345678
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: ad1e
+# Scoreboard: Header usb packet: 510f
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000007bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 06
+# Scoreboard: Channel usb packet: 18
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 238
+# Scoreboard: Rssi usb packet: 245
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 1e
+# Scoreboard: Size usb packet: 19
+# Scoreboard : Compare done!
+# Scoreboard end with          14 error(s)
+# Driver: I've sent a packet           6
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 2244a7cb
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 540e
+# Scoreboard: Header usb packet: e612
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017ce53d32ea658fcd425d8237a05
+# Scoreboard: Data usb packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbea6e0c6cb8ea0808e9d8823e0c7b9ef980
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 08
+# Scoreboard: Channel usb packet: 1a
+# Scoreboard: Advertising error
+# Scoreboard: Advertising ble packet: 0
+# Scoreboard: Advertising usb packet: 1
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 217
+# Scoreboard: Rssi usb packet: 101
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0e
+# Scoreboard: Size usb packet: 1c
+# Scoreboard : Compare done!
+# Scoreboard end with          21 error(s)
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Monitor: I've got a packet from DUT
+# Scoreboard : I've got two packets, I'll compare them...
+# Scoreboard: Adress error
+# Scoreboard: Adresse ble packet: 12345678
+# Scoreboard: Adresse usb packet: fca854ab
+# Scoreboard: Header error
+# Scoreboard: Header ble packet: 510f
+# Scoreboard: Header usb packet: 96fd
+# Scoreboard: Data error
+# Scoreboard: Data ble packet : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fca854ab61aadcbcd3845aa241ae3a
+# Scoreboard: Data usb packet : 0000000ea386bf170c257d1c9ae1ec1aba421d5d3c3e5d7c7751205afa05db96eb2db02d35bac16ef421055237cfd7944527b17dabc99f10ced1e0579c82338e7
+# Scoreboard: Channel error
+# Scoreboard: Channel ble packet: 18
+# Scoreboard: Channel usb packet: 1e
+# Scoreboard :Advertising OK for           5 packet
+# Scoreboard: Rssi error
+# Scoreboard: Rssi ble packet: 245
+# Scoreboard: Rssi usb packet: 118
+# Scoreboard: Size error
+# Scoreboard: Size ble packet: 0f
+# Scoreboard: Size usb packet: 47
+# Scoreboard : Compare done!
+# Scoreboard end with          27 error(s)
+# Driver: I've sent a packet           9
+# Driver : end
+////////////// end errno 5 /////////////////////
+////////////// errno 6 /////////////////////////
+Sequencer : Start
+# Second test case
+# Sending packet with address 12345678
+# 
+# Advertising with address 2244a7cb
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           0!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           1!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           2!!!!
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           3!!!!
+# Sending packet with address 12345678
+# 
+# Advertising with address fca854ab
+# 
+# Sequencer: I sent an advertising packet!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sending packet with address fca854ab
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: testcase 2 end
+# Sequencer : end
+# Driver : start
+# Monitor : start
+# Scoreboard : Start
+# Driver: I've sent a packet           0
+# Driver: I've sent a packet           1
+# Driver: I've sent a packet           2
+# Driver: I've sent a packet           3
+# Driver: I've sent a packet           4
+# Driver: I've sent a packet           5
+# Driver: I've sent a packet           6
+# Driver: I've sent a packet           7
+# Driver: I've sent a packet           8
+# Driver: I've sent a packet           9
+# Driver : end
+////// end errno 6 ///////////////////////
