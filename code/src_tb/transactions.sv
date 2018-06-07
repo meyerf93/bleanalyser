@@ -26,6 +26,8 @@ class BlePacket;
   rand logic[7:0] rssi;
   rand logic[6:0] channel;
 
+  logic[31:0] ad;
+
   /* Contrainte sur la taille des donnees en fonction du type de paquet */
   constraint size_range {
     (isAdv == 1) -> size inside {[4:15]};
@@ -51,8 +53,8 @@ class BlePacket;
   }
 
   function string psprint();
-    $sformat(psprint, "BlePacket, isAdv : %b, addr= %h, time = %t\nsizeSend = %d, dataSend = %h\n",
-                                                       this.isAdv, this.addr, $time,sizeToSend,dataToSend);
+    $sformat(psprint, "BlePacket, isAdv : %b, addr= %h, time = %t\nsizeSend = %d, dataSend = %h\nrssi = %h, channel = %h\n",
+                                                       this.isAdv, this.addr, $time,sizeToSend,dataToSend,rssi,channel);
   endfunction : psprint
 
   function void post_randomize();
@@ -66,13 +68,6 @@ class BlePacket;
 
     for(int i=0;i<6;i++)
       header[i] = size[i];
-
-    //XXX
-    /*while(int i=0 < 6)
-    {
-      header[i] = size[i]
-      i++;
-    }*/
 
 	/* Cas de l'envoi d'un paquet d'advertizing */
 	if (isAdv == 1) begin
@@ -108,17 +103,20 @@ class BlePacket;
     $display("Sending packet with address %h\n",addr);
 	for(int i=0;i<16;i++)
 		dataToSend[sizeToSend-8-32-16+i]=header[i];
-	//for(int i=0;i<6;i++)
-		//dataToSend[sizeToSend-8-32-16+i]=size[i];
 	for(int i=0;i<size*8;i++)
 		dataToSend[sizeToSend-8-32-16-1-i]=rawData[size*8-1-i];
     if (isAdv) begin
-        logic[31:0] ad;
         for(int i=0; i < 32; i++)
             ad[i] = dataToSend[sizeToSend-8-32-16-32+i];
         $display("Advertising with address %h\n",ad);
     end
   endfunction : post_randomize
+
+  function void set_address(int addr);
+    for(int i=0;i<32;i++)
+      dataToSend[sizeToSend-8-32+i]=addr[i];
+      $display("Remplace old addres  by %h",addr);
+  endfunction : set_address
 
 endclass : BlePacket
 
@@ -132,13 +130,6 @@ class AnalyzerUsbPacket;
     logic[15:0] header = 0;
     logic[(64*8):0] rawData = 0;
 endclass : AnalyzerUsbPacket
-
-class DriverFifo;
-    logic[10*(64*8+16+32+8):0] dataToSend[80] = '{80{0}};
-    int index[80] = '{80{0}};
-    logic[7:0] rssi[80] = '{80{0}};
-    int fifo_counter = 0;
-endclass : DriverFifo
 
 typedef mailbox #(BlePacket) ble_fifo_t;
 

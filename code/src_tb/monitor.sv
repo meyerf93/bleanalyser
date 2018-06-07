@@ -15,19 +15,28 @@ class Monitor;
     usb_fifo_t monitor_to_scoreboard_fifo;
 
     task get_packets(input int nbPackets);
+        frameOK = 0;
+        currentData = 0;
         while(i < nbPackets) begin
             //Test s'il y a des donnes valides sur le bus
             if(vif.frame_o == 1) begin
+            //    $display("Monitor : on frame_o == 1  : %t", $time);
                 if(vif.valid_o == 1) begin
+                //    $display("Monitor : on valid_0 == 1 : %t", $time);
                     //Sauvegarde des donnes
                     dutData[currentData] <= vif.data_o;
                     currentData++;
+                    //$display("MONITOR --> FIRST IF NUM PACK %d", i);
                     //$display("Moniteur : save data %d for packet %d", currentData, i);
                 end
                 frameOK = 1;
             end
             if(vif.frame_o == 0 && frameOK == 1) begin
+
                 AnalyzerUsbPacket usb_packet = new;
+
+               $display("in frame_o == 0 : %t", $time);
+
                 usb_packet.size = dutData[0];
                 usb_packet.rssi = dutData[1];
                 usb_packet.channel = dutData[2][7:1];
@@ -52,7 +61,9 @@ class Monitor;
                 $display("Monitor: packet size: %d", usb_packet.size);
                 $display("Monitor: packet data: %h", usb_packet.rawData);*/
 
-                $display("Monitor: I've got a packet from DUT");
+                $display("Monitor: I've got a packet from DUT number %d sur channel %d, adv = %d", i, usb_packet.channel, usb_packet.isAdv);
+                $display("Monitor: I've got a packet from DUT number %d; rssi %h : %b", i, usb_packet.rssi,usb_packet.rssi);
+                //$display("MONITOR --> SECOND IF NUM PACK %d", i);
 
                 //Envoi de l'usb_packet au scoreboard
                 monitor_to_scoreboard_fifo.put(usb_packet);
@@ -61,9 +72,11 @@ class Monitor;
                 currentData = 0;
                 i++;
             end
-
             @(posedge vif.clk_i);
         end
+
+        $display("MONITOR : NOMBRE DE PAQUET DANS LA FIFO : %d", monitor_to_scoreboard_fifo.num);
+
     endtask
 
 
@@ -72,11 +85,11 @@ class Monitor;
         $display("Monitor : start");
 
         if (testcase == 1)
-            get_packets(10);
+            get_packets(20);
         if (testcase == 2)
-            get_packets(10);
+            get_packets(22);
         if (testcase == 3)
-            get_packets(10);
+            get_packets(17);
         if (testcase == 4)
             get_packets(10);
         if (testcase == 5)

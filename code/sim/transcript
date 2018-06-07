@@ -1,32 +1,3 @@
-# do ../scripts/sim.do all 1 0
-# ../src_vhd
-# ../src_tb
-# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:23:15 on Jun 05,2018
-# vcom -2008 ../src_vhd/ble_packet_analyzer.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ble_packet_analyzer
-# -- Compiling architecture behave of ble_packet_analyzer
-# End time: 19:23:15 on Jun 05,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 19:23:15 on Jun 05,2018
-# vlog -sv ../src_tb/ble_packet_analyzer_tb.sv 
-# -- Compiling package ble_packet_analyzer_tb_sv_unit
-# -- Compiling interface ble_itf
-# -- Compiling interface usb_itf
-# -- Compiling module packet_analyzer_tb
-# 
-# Top level modules:
-# 	packet_analyzer_tb
-# End time: 19:23:16 on Jun 05,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
-# Start time: 19:23:16 on Jun 05,2018
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.5c_2 linux_x86_64 Oct 17 2016
 # //
@@ -41,6 +12,35 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+# do ../scripts/sim.do all 1 0
+# ../src_vhd
+# ../src_tb
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 22:10:53 on Jun 07,2018
+# vcom -reportprogress 300 -2008 ../src_vhd/ble_packet_analyzer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ble_packet_analyzer
+# -- Compiling architecture behave of ble_packet_analyzer
+# End time: 22:10:53 on Jun 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 22:10:53 on Jun 07,2018
+# vlog -reportprogress 300 -sv ../src_tb/ble_packet_analyzer_tb.sv 
+# -- Compiling package ble_packet_analyzer_tb_sv_unit
+# -- Compiling interface ble_itf
+# -- Compiling interface usb_itf
+# -- Compiling module packet_analyzer_tb
+# 
+# Top level modules:
+# 	packet_analyzer_tb
+# End time: 22:10:54 on Jun 07,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -t 1ns -novopt work.packet_analyzer_tb -GTESTCASE=1 -GERRNO=0 
+# Start time: 22:10:54 on Jun 07,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.packet_analyzer_tb
 # Refreshing /media/sf_File_VSN/labo5_blepacketanalyzer/bleanalyser/code/sim/work.ble_packet_analyzer_tb_sv_unit
 # Loading sv_std.std
@@ -56,6 +56,16 @@
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.ble_packet_analyzer(behave)
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: unknown  Hostname: VMcoursVSN  ProcessID: 4122
+#           Attempting to use alternate WLF file "./wlftxi8iFQ".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxi8iFQ
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /packet_analyzer_tb/dut
 # Sequencer : Start
@@ -68,164 +78,439 @@
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           0!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         336, dataSend = 00000000000000000000000000000000000000000000000000000000000552244a7cb0ea3f9e0fde83555c919794b7abeadc21e36c71d661f57109a111b85d31829d05834625d95
+# rssi = 18, channel = 02
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           1!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         312, dataSend = 00000000000000000000000000000000000000000000000000000000000000000552244a7cb4de097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# rssi = b7, channel = 04
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           2!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         296, dataSend = 000000000000000000000000000000000000000000000000000000000000000000000552244a7cbad1e7bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# rssi = ee, channel = 06
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           3!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         168, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb540e17ce53d32ea658fcd425d8237a05
+# rssi = d9, channel = 08
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           4!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         400, dataSend = 0000000000000000000000000000000000000000000552244a7cb512bbfed532e79bed566fa26f7572b216762f9a069d0033b7ff8af3f70734db0884c61aadcbcd3845aa241ae3a
+# rssi = f5, channel = 0a
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           5!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         200, dataSend = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbe612bbea6e0c6cb8ea0808e9d8823e0c7b9ef980
+# rssi = 65, channel = 0c
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           6!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         264, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbabda293c40b1649227d2cc137bbe434e9f62663b7c6f5837750d0286
+# rssi = ed, channel = 0e
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           7!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         544, dataSend = 0000000552244a7cb96fdea386bf170c257d1c9ae1ec1aba421d5d3c3e5d7c7751205afa05db96eb2db02d35bac16ef421055237cfd7944527b17dabc99f10ced1e0579c82338e7
+# rssi = 76, channel = 10
+# 
 # Sending packet with address 2244a7cb
 # 
 # Sequencer: I sent a packet num           8!!!!
-# Sequencer : end
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         176, dataSend = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbab4f0789218c27be4afd93c993d0990be4
+# rssi = 47, channel = 12
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num           9!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         240, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb6fd78f4d0588eb46cb85877552598223d8949e562bb2fe0e35
+# rssi = c9, channel = 14
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          10!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =          96, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbde455b06131d90
+# rssi = 7a, channel = 16
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          11!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         408, dataSend = 00000000000000000000000000000000000000000552244a7cbb46cb6452c78e1c6feadeecbd67b54f984155f90226149351c7bcfe66ebb6db354673692df241de0fbb4fc8f250d
+# rssi = 50, channel = 1a
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          12!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =          64, dataSend = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb1101c2
+# rssi = d6, channel = 1c
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          13!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         360, dataSend = 00000000000000000000000000000000000000000000000000000552244a7cbd426b03ee3f019a12fcb7702bcce4a3784792682077323f8ae10146342c870c9c2075cee3e108c38
+# rssi = 46, channel = 1e
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          14!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         168, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb14ce8418f1c8ea7327cd989f09563c6c
+# rssi = d1, channel = 20
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          15!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =          80, dataSend = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb08839e0272
+# rssi = aa, channel = 22
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          16!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         184, dataSend = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbbad0fdcf808cb95ff44758093e3586a40fa8
+# rssi = 2b, channel = 24
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          17!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         552, dataSend = 00000552244a7cbf4fe25c3aa604e80e2a3925b4bbee0329f20604a4dbb7e4f600d68cf3bb2af27c9db020cef3fad05ac9b295c64ea486fea0a96494a9afc4e3e60020a45350c73
+# rssi = 54, channel = 26
+# 
+# Sending packet with address 2244a7cb
+# 
+# Sequencer: I sent a packet num          18!!!!
+# Sequencer: packet : BlePacket, isAdv : 0, addr= 2244a7cb, time =                    0
+# sizeSend =         240, dataSend = 00000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbb557cb842a64440e60a258a1cfa5d4507adc60f030aeba6948
+# rssi = 82, channel = 28
+# 
+# Sequencer : end first testcase
+# sequenceur : envoi           0
 # Sequencer : end
 # Driver : start
 # Monitor : start
 # Scoreboard : Start
-# Driver: I've sent a packet           0
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           0 packet
-# Scoreboard : Header OK for           0 packet
-# Scoreboard :Data OK for           0 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           0 packet
-# Scoreboard :Rssi OK for           0 packet
-# Scoreboard :Size OK for           0 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           1
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           1 packet
-# Scoreboard : Header OK for           1 packet
-# Scoreboard :Data OK for           1 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           1 packet
-# Scoreboard :Rssi OK for           1 packet
-# Scoreboard :Size OK for           1 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           2
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           2 packet
-# Scoreboard : Header OK for           2 packet
-# Scoreboard :Data OK for           2 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           2 packet
-# Scoreboard :Rssi OK for           2 packet
-# Scoreboard :Size OK for           2 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           3
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           3 packet
-# Scoreboard : Header OK for           3 packet
-# Scoreboard :Data OK for           3 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           3 packet
-# Scoreboard :Rssi OK for           3 packet
-# Scoreboard :Size OK for           3 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           4
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           4 packet
-# Scoreboard : Header OK for           4 packet
-# Scoreboard :Data OK for           4 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           4 packet
-# Scoreboard :Rssi OK for           4 packet
-# Scoreboard :Size OK for           4 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           5
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           5 packet
-# Scoreboard : Header OK for           5 packet
-# Scoreboard :Data OK for           5 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           5 packet
-# Scoreboard :Rssi OK for           5 packet
-# Scoreboard :Size OK for           5 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           6
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           6 packet
-# Scoreboard : Header OK for           6 packet
-# Scoreboard :Data OK for           6 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           6 packet
-# Scoreboard :Rssi OK for           6 packet
-# Scoreboard :Size OK for           6 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           7
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           7 packet
-# Scoreboard : Header OK for           7 packet
-# Scoreboard :Data OK for           7 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           7 packet
-# Scoreboard :Rssi OK for           7 packet
-# Scoreboard :Size OK for           7 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           8
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           8 packet
-# Scoreboard : Header OK for           8 packet
-# Scoreboard :Data OK for           8 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           8 packet
-# Scoreboard :Rssi OK for           8 packet
-# Scoreboard :Size OK for           8 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
-# Driver: I've sent a packet           9
-# Monitor: I've got a packet from DUT
-# Scoreboard : I've got two packets, I'll compare them...
-# Scoreboard :Adress OK for           9 packet
-# Scoreboard : Header OK for           9 packet
-# Scoreboard :Data OK for           9 packet
-# Scoreboard :Channel OK
-# Scoreboard :Advertising OK for           9 packet
-# Scoreboard :Rssi OK for           9 packet
-# Scoreboard :Size OK for           9 packet
-# Scoreboard : Compare done!
-# Scoreboard end with           0 error(s)
+# Scoreboard : There is          20 BLE packets and           0 USB Packet, nb packets :          20
+# data to send : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005512345678d50b2244a7cb65942a3b25e826
+# in frame_o == 0 :               113235
+# Monitor: I've got a packet from DUT number           0 sur channel   0, adv = 1
+# Monitor: I've got a packet from DUT number           0; rssi 89 : 10001001
+# Driver: I've sent a packet           1, sur channel   0, adv = 1
+# Driver: I've sent a packet           1, with rssi 89 : 10001001
+# data to send : 00000000000000000000000000000000000000000000000000000000000552244a7cb0ea3f9e0fde83555c919794b7abeadc21e36c71d661f57109a111b85d31829d05834625d95
+# in frame_o == 0 :               379005
+# Monitor: I've got a packet from DUT number           1 sur channel   2, adv = 0
+# Monitor: I've got a packet from DUT number           1; rssi 18 : 00011000
+# Driver: I've sent a packet           2, sur channel   2, adv = 0
+# Driver: I've sent a packet           2, with rssi 18 : 00011000
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000552244a7cb4de097a289d85ad8977078b84594335843eaf6306e9dfba554d72107eaf601a82743
+# in frame_o == 0 :               625545
+# Monitor: I've got a packet from DUT number           2 sur channel   4, adv = 0
+# Monitor: I've got a packet from DUT number           2; rssi b7 : 10110111
+# Driver: I've sent a packet           3, sur channel   4, adv = 0
+# Driver: I've sent a packet           3, with rssi b7 : 10110111
+# data to send : 000000000000000000000000000000000000000000000000000000000000000000000552244a7cbad1e7bab11fc7e95658e2d5f0cca64d6012b26eb1940c1db9a7c936125f6b2a2
+# in frame_o == 0 :               859455
+# Monitor: I've got a packet from DUT number           3 sur channel   6, adv = 0
+# Monitor: I've got a packet from DUT number           3; rssi ee : 11101110
+# Driver: I've sent a packet           4, sur channel   6, adv = 0
+# Driver: I've sent a packet           4, with rssi ee : 11101110
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb540e17ce53d32ea658fcd425d8237a05
+# in frame_o == 0 :               992105
+# Monitor: I've got a packet from DUT number           4 sur channel   8, adv = 0
+# Monitor: I've got a packet from DUT number           4; rssi d9 : 11011001
+# Driver: I've sent a packet           5, sur channel   8, adv = 0
+# Driver: I've sent a packet           5, with rssi d9 : 11011001
+# data to send : 0000000000000000000000000000000000000000000552244a7cb512bbfed532e79bed566fa26f7572b216762f9a069d0033b7ff8af3f70734db0884c61aadcbcd3845aa241ae3a
+# in frame_o == 0 :              1308485
+# Monitor: I've got a packet from DUT number           5 sur channel  10, adv = 0
+# Monitor: I've got a packet from DUT number           5; rssi f5 : 11110101
+# Driver: I've sent a packet           6, sur channel  10, adv = 0
+# Driver: I've sent a packet           6, with rssi f5 : 11110101
+# data to send : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbe612bbea6e0c6cb8ea0808e9d8823e0c7b9ef980
+# in frame_o == 0 :              1466325
+# Monitor: I've got a packet from DUT number           6 sur channel  12, adv = 0
+# Monitor: I've got a packet from DUT number           6; rssi 65 : 01100101
+# Driver: I've sent a packet           7, sur channel  12, adv = 0
+# Driver: I've sent a packet           7, with rssi 65 : 01100101
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbabda293c40b1649227d2cc137bbe434e9f62663b7c6f5837750d0286
+# in frame_o == 0 :              1675055
+# Monitor: I've got a packet from DUT number           7 sur channel  14, adv = 0
+# Monitor: I've got a packet from DUT number           7; rssi ed : 11101101
+# Driver: I've sent a packet           8, sur channel  14, adv = 0
+# Driver: I've sent a packet           8, with rssi ed : 11101101
+# data to send : 0000000552244a7cb96fdea386bf170c257d1c9ae1ec1aba421d5d3c3e5d7c7751205afa05db96eb2db02d35bac16ef421055237cfd7944527b17dabc99f10ced1e0579c82338e7
+# in frame_o == 0 :              2105255
+# Monitor: I've got a packet from DUT number           8 sur channel  16, adv = 0
+# Monitor: I've got a packet from DUT number           8; rssi 76 : 01110110
+# Driver: I've sent a packet           9, sur channel  16, adv = 0
+# Driver: I've sent a packet           9, with rssi 76 : 01110110
+# data to send : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbab4f0789218c27be4afd93c993d0990be4
+# in frame_o == 0 :              2243925
+# Monitor: I've got a packet from DUT number           9 sur channel  18, adv = 0
+# Monitor: I've got a packet from DUT number           9; rssi 47 : 01000111
+# Driver: I've sent a packet          10, sur channel  18, adv = 0
+# Driver: I've sent a packet          10, with rssi 47 : 01000111
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb6fd78f4d0588eb46cb85877552598223d8949e562bb2fe0e35
+# in frame_o == 0 :              2433695
+# Monitor: I've got a packet from DUT number          10 sur channel  20, adv = 0
+# Monitor: I've got a packet from DUT number          10; rssi c9 : 11001001
+# Driver: I've sent a packet          11, sur channel  20, adv = 0
+# Driver: I've sent a packet          11, with rssi c9 : 11001001
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbde455b06131d90
+# in frame_o == 0 :              2509445
+# Monitor: I've got a packet from DUT number          11 sur channel  22, adv = 0
+# Monitor: I've got a packet from DUT number          11; rssi 7a : 01111010
+# Driver: I've sent a packet          12, sur channel  22, adv = 0
+# Driver: I've sent a packet          12, with rssi 7a : 01111010
+# data to send : 00000000000000000000000000000000000000000552244a7cbb46cb6452c78e1c6feadeecbd67b54f984155f90226149351c7bcfe66ebb6db354673692df241de0fbb4fc8f250d
+# in frame_o == 0 :              2832245
+# Monitor: I've got a packet from DUT number          12 sur channel  26, adv = 0
+# Monitor: I've got a packet from DUT number          12; rssi 50 : 01010000
+# Driver: I've sent a packet          13, sur channel  26, adv = 0
+# Driver: I've sent a packet          13, with rssi 50 : 01010000
+# data to send : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb1101c2
+# in frame_o == 0 :              2882465
+# Monitor: I've got a packet from DUT number          13 sur channel  28, adv = 0
+# Monitor: I've got a packet from DUT number          13; rssi d6 : 11010110
+# Driver: I've sent a packet          14, sur channel  28, adv = 0
+# Driver: I've sent a packet          14, with rssi d6 : 11010110
+# data to send : 00000000000000000000000000000000000000000000000000000552244a7cbd426b03ee3f019a12fcb7702bcce4a3784792682077323f8ae10146342c870c9c2075cee3e108c38
+# in frame_o == 0 :              3167325
+# Monitor: I've got a packet from DUT number          14 sur channel  30, adv = 0
+# Monitor: I've got a packet from DUT number          14; rssi 46 : 01000110
+# Driver: I've sent a packet          15, sur channel  30, adv = 0
+# Driver: I've sent a packet          15, with rssi 46 : 01000110
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb14ce8418f1c8ea7327cd989f09563c6c
+# in frame_o == 0 :              3299895
+# Monitor: I've got a packet from DUT number          15 sur channel  32, adv = 0
+# Monitor: I've got a packet from DUT number          15; rssi d1 : 11010001
+# Driver: I've sent a packet          16, sur channel  32, adv = 0
+# Driver: I've sent a packet          16, with rssi d1 : 11010001
+# data to send : 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cb08839e0272
+# in frame_o == 0 :              3363075
+# Monitor: I've got a packet from DUT number          16 sur channel  34, adv = 0
+# Monitor: I've got a packet from DUT number          16; rssi aa : 10101010
+# Driver: I've sent a packet          17, sur channel  34, adv = 0
+# Driver: I've sent a packet          17, with rssi aa : 10101010
+# data to send : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbbad0fdcf808cb95ff44758093e3586a40fa8
+# in frame_o == 0 :              3508655
+# Monitor: I've got a packet from DUT number          17 sur channel  36, adv = 0
+# Monitor: I've got a packet from DUT number          17; rssi 2b : 00101011
+# Driver: I've sent a packet          18, sur channel  36, adv = 0
+# Driver: I've sent a packet          18, with rssi 2b : 00101011
+# data to send : 00000552244a7cbf4fe25c3aa604e80e2a3925b4bbee0329f20604a4dbb7e4f600d68cf3bb2af27c9db020cef3fad05ac9b295c64ea486fea0a96494a9afc4e3e60020a45350c73
+# in frame_o == 0 :              3945285
+# Monitor: I've got a packet from DUT number          18 sur channel  38, adv = 0
+# Monitor: I've got a packet from DUT number          18; rssi 54 : 01010100
+# Driver: I've sent a packet          19, sur channel  38, adv = 0
+# Driver: I've sent a packet          19, with rssi 54 : 01010100
+# data to send : 00000000000000000000000000000000000000000000000000000000000000000000000000000000000552244a7cbb557cb842a64440e60a258a1cfa5d4507adc60f030aeba6948
+# in frame_o == 0 :              4134585
+# Monitor: I've got a packet from DUT number          19 sur channel  40, adv = 0
+# Monitor: I've got a packet from DUT number          19; rssi 82 : 10000010
+# Scoreboard : There is          20 BLE packets and          20 USB Packet
+# Scoreboard : There is the same number of BLE & USB packets
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Let's compare USB & BLE packets
+# Scoreboard: Comparaison Advertising OK
+# Scoreboard: Comparaison Header OK
+# Scoreboard: Comparaison Adress OK
+# Scoreboard: Comparaison Data OK
+# Scoreboard: Comparaison RSSI OK
+# Scoreboard: Comparaison Size OK
+# Scoreboard: Comparaison Channel OK
+# Scoreboard : All messages from sequencer have been retrieved!
+# Scoreboard : All messages from monitor have been retrieved!
+# Comparaison finished with           0 errors
+# Scoreboard : End
+# MONITOR : NOMBRE DE PAQUET DANS LA FIFO :           0
 # Monitor : end
+# Driver: I've sent a packet          20, sur channel  40, adv = 0
+# Driver: I've sent a packet          20, with rssi 82 : 10000010
+# driver : nb packet envoyé au DUT          20
 # Driver : end
-# Break key hit
-# Break at an unknown location
-# Stopped at ../src_tb/ble_packet_analyzer_tb.sv line 31
-# Control-C interrupt
-# 
-# MACRO ./../scripts/sim.do PAUSED at line 73
-# Break key hit
-# Break key hit
-# End time: 19:24:01 on Jun 05,2018, Elapsed time: 0:00:45
+# ** Note: $finish    : ../src_tb/ble_packet_analyzer_tb.sv(45)
+#    Time: 4136095 ns  Iteration: 1  Instance: /packet_analyzer_tb
+# 1
+# Break in Module packet_analyzer_tb at ../src_tb/ble_packet_analyzer_tb.sv line 45
+# Causality operation skipped due to absence of debug database file
+# End time: 22:16:42 on Jun 07,2018, Elapsed time: 0:05:48
+# Errors: 4, Warnings: 5
+                                                                                                                                                                                                                                                                   # End time: 22:16:52 on Jun 07,2018, Elapsed time: 0:33:35
 # Errors: 0, Warnings: 2
